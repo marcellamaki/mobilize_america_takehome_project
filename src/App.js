@@ -35,7 +35,6 @@ class App extends Component {
 
   handleZipCodeSearch = (event) => {
     event.preventDefault()
-    console.log(event.target)
     fetchZipcodeLatLng(this.state.zipcode.toString())
     .then (res => this.setState({
       location: true,
@@ -52,7 +51,7 @@ class App extends Component {
       <div>
       <WelcomeScreen
       location={this.state.location}
-      selectedRadius={this.state.selectedOption}
+      selectedOption={this.state.selectedOption}
       updateSearchRadius={this.updateSearchRadius}
       handleZipCodeSearch={this.handleZipCodeSearch}
       updateZipcode={this.updateZipcode}

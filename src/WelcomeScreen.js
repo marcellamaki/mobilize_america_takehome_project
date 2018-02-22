@@ -40,7 +40,7 @@ class WelcomeScreen extends React.Component {
       return(
         <ApiWrapper>
           <List />
-          <MapContainer />
+          <MapContainer currentRadius={parseInt(this.props.selectedOption)}/>
         </ApiWrapper>
       )
     }

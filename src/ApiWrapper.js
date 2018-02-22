@@ -11,7 +11,7 @@ class ApiWrapper extends React.Component {
     };
   }
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     fetchEventData()
     .then(res => this.setState({
       events: res.data.events
