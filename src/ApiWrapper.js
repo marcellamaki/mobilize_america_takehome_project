@@ -16,10 +16,11 @@ class ApiWrapper extends React.Component {
     .then(res => this.setState({
       events: res.data.events
     }))
-    .catch(err => console.log('There was an error:' + err))
+    .catch(err => this.renderErrorMessage(err))
   }
 
-  renderErrorMessage() {
+  renderErrorMessage(err) {
+    console.log("Error": err)
     <p>Uh oh! Something went wrong. Please try refreshing the page. Still having trouble? <a href="mailto:techsupport@mobilizeamerica.io">Contact Us!</a></p>
   }
 
@@ -31,8 +32,6 @@ class ApiWrapper extends React.Component {
       return (
         <div>
         <p>Loading...</p>
-        {console.log(setTimeout(this.renderErrorMessage, 5000))}
-        {setTimeout(this.renderErrorMessage, 5000)}
         </div>
       )
     }
