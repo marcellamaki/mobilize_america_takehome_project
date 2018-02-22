@@ -31,6 +31,7 @@ class ApiWrapper extends React.Component {
       return (
         <div>
         <p>Loading...</p>
+        {console.log(setTimeout(this.renderErrorMessage, 5000))}
         {setTimeout(this.renderErrorMessage, 5000)}
         </div>
       )

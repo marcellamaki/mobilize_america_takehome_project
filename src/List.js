@@ -2,7 +2,6 @@ import React from 'react';
 import {distanceCalculator} from './DistanceCalculator.js'
 
 export default (props) => {
-  console.log(props)
   const currentRadius = props.currentRadius
   const eventsWithinRadius = props.events.filter(event => distanceCalculator(event.location.latitude, event.location.longitude) <= currentRadius)
 
@@ -11,10 +10,9 @@ export default (props) => {
         <h2> Uh oh! It looks like there are no events near you yet. Wish there were?
           Sign up to volunteer and we will get back to you with ways to kick start political action in your community!
         </h2>
-
     )
   } else {
-        return (
+      return (
         <div className="container">
           <h2> Events within {currentRadius} miles of {props.zipcode}</h2>
           {eventsWithinRadius.map((event, index) => {
@@ -31,6 +29,6 @@ export default (props) => {
               </div>
           })}
         </div>
-    )
-}
+      )
+    }
 }
