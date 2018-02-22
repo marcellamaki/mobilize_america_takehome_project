@@ -16,7 +16,7 @@ export class MapContainer extends React.Component {
     const userPosition = JSON.parse(localStorage.getItem('location'))
 
     return (
-      <Map className="google-map" clickableIcons={true} google={this.props.google} zoom={8} initialCenter={userPosition}>
+      <Map className="google-map" clickableIcons={true} google={this.props.google} zoom={11} initialCenter={userPosition}>
         <Marker name={'Current Location'} positon={userPosition}/>
         {localEventMarkers}
       </Map>
