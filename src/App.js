@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import WelcomeScreen from './WelcomeScreen';
+import {fetchZipcodeLatLng} from './api/util.js'
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class App extends Component {
   }
 
   updateZipcode = (event) => {
+    console.log(event.target.value)
     this.setState({
       zipcode: event.target.value
     })
@@ -22,22 +24,23 @@ class App extends Component {
 
   handleZipCodeSearch = (event) => {
     event.preventDefault()
-    console.log(this.state)
-    this.setState({
-      location: true
+    console.log(event.target)
+    fetchZipcodeLatLng(this.state.zipcode.toString())
+    .then (res => this.setState({
+      location: true,
+      lat: res.results[0].geometry.location.lat,
+      lng: res.results[0].geometry.location.lng
     })
+  )
   }
 
-  handleUseMyLocation = (event) => {
-    event.preventDefault()
-    console.log("hello world from use my location")
-  }
 
   render() {
+    console.log("lat", this.state.lat)
     return (
       <div>
       <WelcomeScreen
-      location={this.state.location} handleUseMyLocation={this.handleUseMyLocation}
+      location={this.state.location}
       handleZipCodeSearch={this.handleZipCodeSearch}
       updateZipcode={this.updateZipcode}
       />

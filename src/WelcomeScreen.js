@@ -25,7 +25,7 @@ class WelcomeScreen extends React.Component {
       return(
         <ApiWrapper>
           <List />
-          <MapContainer event={this.props.events}/>
+          <MapContainer />
         </ApiWrapper>
       )
     }
