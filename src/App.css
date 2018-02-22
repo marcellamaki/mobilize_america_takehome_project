@@ -7,8 +7,23 @@ p {
 
 .container {
  max-width: 700px;
- margin-top: 50px;
  margin: auto;
+}
+
+.large-header-box {
+  max-width: auto;
+  max-height: 50vh;
+  padding: 100px;
+  background-image: url('./imgs/danica_campaign.jpg');
+}
+
+.small-header-box {
+ max-width: 350px;
+ color: white;
+ padding: 75px;
+ font-size: 20px;
+ margin: auto;
+ background-color: rgba(0, 175, 242, 0.75);
 }
 
 .input {
@@ -16,6 +31,18 @@ p {
 }
 
 button {
+ background-color:white;
+ font-size: 14px;
+ border-weight: 2px;
+ border-color: rgba(0, 175, 242, 0.75);
+ padding:6px;
+ margin: 6px;
+ color: rgba(0, 175, 242, 0.75);
+ font-weight: 400;
+ text-transform: uppercase;
+}
+
+.submit-button {
  background-color:white;
  font-size: 14px;
  border-weight: 2px;
@@ -39,6 +66,17 @@ button:active {
   transition: 0.4s;
 }
 
+.submit-button:hover,
+.submit-button:active {
+  background-color:rgba(0, 175, 242, 0.75);
+  font-size: 14px;
+  padding:6px;
+  margin: 6px;
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
 
 form {
  margin: 5px;
@@ -70,6 +108,7 @@ a {
  transition: color 0.5s ease;
 
 }
+
 
 h1, h2 {
   text-align: center;

@@ -10,7 +10,10 @@ class WelcomeScreen extends React.Component {
     return (
       <div>
       <h1>Mobilize America</h1>
-        <h2>Find events near you</h2>
+      <div className="large-header-box">
+        <h2 className="small-header-box">HELP ELECT DEMOCRATIC OFFICIALS IN YOUR COMMUNITY IN 2018</h2>
+      </div>
+      <h2>Find events near you</h2>
         <form>
         <h4>Show me events within...</h4>
           <div className="radio">
@@ -31,8 +34,8 @@ class WelcomeScreen extends React.Component {
               25 miles
             </label>
           </div>
-          of <input type="text" name="zipcode" placeholder="enter zipcode..." value={this.props.zipcode} onChange={this.props.updateZipcode}/>
-          <button value={this.props.zipcode} onClick={this.props.handleZipCodeSearch}>Go</button>
+          of <input type="text" name="zipcode" placeholder="enter zipcode..." value={this.props.zipcode} onChange={this.props.updateZipcode} required/>
+          <input className="submit-button" type="submit" value={this.props.zipcode} name="Go" onClick={this.props.handleZipCodeSearch}/>
         </form>
       </div>
     )

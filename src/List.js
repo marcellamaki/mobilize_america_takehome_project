@@ -1,6 +1,5 @@
 import React from 'react';
 import {distanceCalculator} from './DistanceCalculator.js'
-import haversine from 'haversine'
 
 export default (props) => {
   console.log(props)

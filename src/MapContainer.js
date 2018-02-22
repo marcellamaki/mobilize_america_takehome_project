@@ -1,13 +1,8 @@
 import React from 'react'
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import {distanceCalculator} from './DistanceCalculator.js'
-import haversine from 'haversine'
 
 export class MapContainer extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
 
   render() {
     const currentRadius = this.props.currentRadius
