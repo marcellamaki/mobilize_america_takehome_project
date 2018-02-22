@@ -34,15 +34,15 @@ class WelcomeScreen extends React.Component {
               25 miles
             </label>
           </div>
-          of <input type="text" name="zipcode" placeholder="enter zipcode..." value={this.props.zipcode} onChange={this.props.updateZipcode} required/>
-          <input className="submit-button" type="submit" value={this.props.zipcode} name="Go" onClick={this.props.handleZipCodeSearch}/>
+          of <input type="text" name="zipcode" placeholder="enter zipcode..." value='' onChange={this.props.updateZipcode} required/>
+          <input className="submit-button" type="submit" value="submit" name="Go" onClick={this.props.handleZipCodeSearch}/>
         </form>
       </div>
     )
     } else {
       return(
         <ApiWrapper>
-          <List currentRadius={parseInt(this.props.selectedOption)}/>
+          <List currentRadius={parseInt(this.props.selectedOption)} zipcode={this.props.zipcode}/>
           <MapContainer currentRadius={parseInt(this.props.selectedOption)}/>
         </ApiWrapper>
       )

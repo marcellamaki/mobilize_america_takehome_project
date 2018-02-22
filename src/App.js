@@ -51,6 +51,7 @@ class App extends Component {
       <div>
       <WelcomeScreen
       location={this.state.location}
+      zipcode={this.state.zipcode}
       selectedOption={this.state.selectedOption}
       updateSearchRadius={this.updateSearchRadius}
       handleZipCodeSearch={this.handleZipCodeSearch}

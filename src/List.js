@@ -16,6 +16,7 @@ export default (props) => {
   } else {
         return (
         <div className="container">
+          <h2> Showing events within {currentRadius} miles of {props.zipcode}</h2>
           {eventsWithinRadius.map((event, index) => {
             return <div key={index}>
               <h2>{event.name}</h2>
