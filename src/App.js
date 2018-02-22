@@ -12,6 +12,7 @@ class App extends Component {
       zipcode: null,
       lat: null,
       lng: null,
+      latlng: {}
     };
   }
 
@@ -29,14 +30,14 @@ class App extends Component {
     .then (res => this.setState({
       location: true,
       lat: res.results[0].geometry.location.lat,
-      lng: res.results[0].geometry.location.lng
-    })
-  )
+      lng: res.results[0].geometry.location.lng,
+      latlng: {lat: res.results[0].geometry.location.lat, lng: res.results[0].geometry.location.lng}})
+    )
   }
 
 
   render() {
-    console.log("lat", this.state.lat)
+    (!!this.state.location ? localStorage.setItem('location', JSON.stringify(this.state.latlng)) : null)
     return (
       <div>
       <WelcomeScreen

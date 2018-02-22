@@ -7,12 +7,13 @@ export class MapContainer extends React.Component {
   render() {
     console.log(this.props.events)
     const upcoming = this.props.events.map((event, index) => <Marker key={index} event={event} name={`${event.name}`} position={{lat: event.location.latitude, lng: event.location.longitude}} />)
-    const userLocation = {lat: 37.09024, lng: -95.71289100000001}
+    const userPosition = JSON.parse(localStorage.getItem('location'))
+    console.log(userPosition)
 
     return (
-      <Map className="google-map" clickableIcons={true} onClick={this.closeModal} google={this.props.google} zoom={4} initialCenter={userLocation}>
+      <Map className="google-map" clickableIcons={true} onClick={this.closeModal} google={this.props.google} zoom={4} initialCenter={userPosition}>
 
-        <Marker name={'Current Location'} positon={userLocation}/>
+        <Marker name={'Current Location'} positon={userPosition}/>
 
         {upcoming}
 
