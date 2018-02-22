@@ -5,7 +5,9 @@ export default (props) => {
   console.log(props)
   const currentRadius = props.currentRadius
   const eventsWithinRadius = props.events.filter(event => distanceCalculator(event.location.latitude, event.location.longitude) <= currentRadius)
-  return (
+
+  if (eventsWithinRadius >0) {
+    return (
     <div className="container">
       {eventsWithinRadius.map((event, index) => {
         return <div key={index}>
@@ -20,6 +22,15 @@ export default (props) => {
           <p>{event.location.city}, {event.location.state}, {event.location.zipcode}</p>
           </div>
       })}
-    </div>
+    </div>)
+  } else {
+    return (
+      <div>
+        <h2> Uh oh! It looks like there are no events near you yet. Wish there were?
+          Sign up to volunteer and kick start political action in your community!
+        </h2>
+        <button style="margin:auto">Sign Me Up!</button>
+      </div>
   )
+}
 }
