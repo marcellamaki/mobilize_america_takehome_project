@@ -12,7 +12,9 @@ class App extends Component {
       zipcode: null,
       lat: null,
       lng: null,
-      latlng: {}
+      latlng: {},
+      searchRadius: null,
+      selectedOption: "5"
     };
   }
 
@@ -20,6 +22,14 @@ class App extends Component {
     console.log(event.target.value)
     this.setState({
       zipcode: event.target.value
+    })
+  }
+
+  updateSearchRadius = (event) => {
+    console.log(event.target.value)
+    this.setState({
+      searchRadius: parseInt(event.target.value),
+      selectedOption: event.target.value
     })
   }
 
@@ -42,6 +52,8 @@ class App extends Component {
       <div>
       <WelcomeScreen
       location={this.state.location}
+      selectedRadius={this.state.selectedOption}
+      updateSearchRadius={this.updateSearchRadius}
       handleZipCodeSearch={this.handleZipCodeSearch}
       updateZipcode={this.updateZipcode}
       />

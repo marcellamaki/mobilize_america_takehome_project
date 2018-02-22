@@ -5,8 +5,6 @@ import MapContainer from './MapContainer'
 
 class WelcomeScreen extends React.Component {
 
-
-
   render() {
     if (!this.props.location) {
     return (
@@ -17,19 +15,19 @@ class WelcomeScreen extends React.Component {
         <h4>Show me events within...</h4>
           <div className="radio">
             <label>
-              <input type="radio" value="5mi" />
+              <input type="radio" name="5mi" value="5" onChange={this.props.updateSearchRadius} checked={this.props.selectedOption === "5"}/>
               5 Miles
             </label>
           </div>
           <div className="radio">
             <label>
-              <input type="radio" value="10mi" />
+              <input type="radio" name="10mi" value="10" onChange={this.props.updateSearchRadius} checked={this.props.selectedOption === "10"}/>
               10 miles
             </label>
           </div>
           <div className="radio">
             <label>
-              <input type="radio" value="25mi" />
+              <input type="radio" name="25mi" value="25" onChange={this.props.updateSearchRadius} checked={this.props.selectedOption === "25"}/>
               25 miles
             </label>
           </div>
